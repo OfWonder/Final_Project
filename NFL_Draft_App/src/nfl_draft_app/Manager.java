@@ -1,7 +1,6 @@
 //My name is Joseph Posey and this is my work.
 package nfl_draft_app;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Manager 
@@ -9,16 +8,6 @@ public class Manager
     
     public static void main(String[] args)
     {
-//        Manager User = new Manager(); //Test manager
-//        User.toString();
-//        System.out.print(User.toString() + "\n");
-//        System.out.print(User.playerList.get(0).getName() + " weighs " + User.playerList.get(0).getWeightInPounds() + "\n");
-//        User.playerList.get(0).setWeightInPounds(300);
-//        User.playerList.get(1).setWeightInPounds(189);
-//        User.playerList.get(2).setWeightInPounds(500);
-//        User.playerList.get(3).setWeightInPounds(306);
-//        System.out.print(User.playerList.get(0).getAllStats());
-//        System.out.print(User.playerList.get(1).getAllStats());
     }
     
     public Manager()
@@ -71,8 +60,8 @@ public class Manager
     public String nameList() 
     {
 	String playList = "";
-	for (Player n : playerList) 
-            playList += (n.name + "\n");
+	for (Player p : playerList) 
+            playList += (p.name + "\n");
             return playList;
     }
     

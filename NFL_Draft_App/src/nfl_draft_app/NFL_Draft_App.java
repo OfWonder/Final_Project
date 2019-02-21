@@ -30,7 +30,7 @@ public class NFL_Draft_App extends Application
         
         Scene SplashScene = new Scene(Splash, 600, 400);
         
-        primaryStage.setTitle("Posey INC NFL Drfat App");
+        primaryStage.setTitle("Posey INC NFL Draft App");
         primaryStage.setScene(SplashScene);
         primaryStage.setResizable(false);
         FadeTransition ft = new FadeTransition(Duration.millis(1500), Splash);

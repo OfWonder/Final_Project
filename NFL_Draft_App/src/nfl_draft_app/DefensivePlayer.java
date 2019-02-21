@@ -5,6 +5,14 @@ import java.util.*;
 
 public class DefensivePlayer extends Player
 {
+    private String position;
+    public static final String[] defensivePositions = {"Defensive End", "Middle Linebacker", "Defensive Tackle", "Outside Linebacker", "Cornerback", 
+                                                        "Safety", "Nickleback", "Dimeback"};
+    private int interceptions;
+    private int tackles;
+    private int fumbles;
+    private String allStats;
+    
     public DefensivePlayer()
     {
     }
@@ -30,14 +38,6 @@ public class DefensivePlayer extends Player
         this.tackles = tackles;
         this.fumbles = fumbles;
     }
-    
-    private String position;
-    private static final String[] defensivePositions = {"Defensive End", "Middle Linebacker", "Defensive Tackle", "Outside Linebacker", "Cornerback", 
-                                                        "Safety", "Nickleback", "Dimeback"};
-    private int interceptions;
-    private int tackles;
-    private int fumbles;
-    private String allStats;
     
     public String getPosition()
     {
@@ -74,20 +74,20 @@ public class DefensivePlayer extends Player
         this.fumbles = fumbles;
     }
     
+    @Override
     public String getDefensivePositions() 
     {
         List<String> pos = Arrays.asList(defensivePositions);
         String dPositionsList = "";
         for (String p:defensivePositions)
-            dPositionsList += (p + "\t" + pos.indexOf(p) + "\n");
+            dPositionsList += (p + "\n");
         return dPositionsList;
     }
     
     @Override
     public String toString()
     {  
-        allStats = "Name:\t\t" + name + "\nHeight:\t\t" + heightInInches + " In.\nWeight:\t\t" + weightInPounds + " Lbs.\nPosition:\t" + position + 
-                "\nInterceptions:\t" + interceptions + "\nTackles:\t" + tackles + "\nFumbles:\t" + fumbles + "\n";
+        allStats = name + "\n" + heightInInches + "\n" + weightInPounds + "\n" + position + "\n" + interceptions + "\n" + tackles + "\n" + fumbles;
         return allStats;
     }
 }

@@ -13,8 +13,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Offensive_Or_Defensive_Player_ScreenController implements Initializable 
-{
-    
+{ 
     @FXML
     private void View_Offensive_Player_List(ActionEvent event) throws Exception
     {
@@ -26,28 +25,39 @@ public class Offensive_Or_Defensive_Player_ScreenController implements Initializ
     }
     
     @FXML
-    private void View_Defensive_Player_List(ActionEvent e) throws Exception
+    private void View_Defensive_Player_List(ActionEvent event) throws Exception
     {
         Parent Test = FXMLLoader.load(getClass().getResource("Defensive_Player_List.fxml"));
         Scene fun = new Scene(Test);
-        Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(fun);
         window.show();
     }
     
     @FXML
-    private void View_ALL_Player_List(ActionEvent e) throws Exception
+    private void View_ALL_Player_List(ActionEvent event) throws Exception
     {
         Parent Test = FXMLLoader.load(getClass().getResource("All_Player_List.fxml"));
         Scene fun = new Scene(Test);
-        Stage window = (Stage)((Node)e.getSource()).getScene().getWindow();
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(fun);
+        window.show();
+    }
+    
+    @FXML
+    private void NewPlayer(ActionEvent event) throws Exception
+    {
+        Player p = new OffensivePlayer("Please enter a name");
+        Stat_ScreenController.last = "n";
+        Stat_ScreenController.currentPlayer = p;
+        Parent Test = FXMLLoader.load(getClass().getResource("Stat_Screen.fxml"));
+        Scene fun = new Scene(Test);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(fun);
         window.show();
     }
     
     public void initialize(URL url, ResourceBundle rb) 
     {
-        // TODO
-    }    
-    
+    }
 }

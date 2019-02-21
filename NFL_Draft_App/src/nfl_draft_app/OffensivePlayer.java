@@ -8,23 +8,27 @@ import java.util.*;
 public class OffensivePlayer extends Player
 {
     private String position;
-    private static final String[] offensivePositions = {"Center", "Offensive Guard", "Offensive Tackle", "Quarterback", "Running Back", 
-                                                        "Wide Reciever", "Tight End"};
-    private double passingYards;
-    private double rushingYards;
-    private int completions;
-    private String allStats;
+    public static final String[] offensivePositions = {"Center", "Offensive Guard", "Offensive Tackle", "Quarterback", "Running Back", "Wide Reciever", "Tight End"};
+    public double passingYards;
+    public double rushingYards;
+    public int completions;
+    public String allStats;
     
     public OffensivePlayer()
     {
     }
     
-     public OffensivePlayer(String name, String position)
+    public OffensivePlayer(String name)
+    {
+        this.name =  name;
+    }
+    
+    public OffensivePlayer(String name, String position)
     {
         this.name =  name;
         this.position = position;
     }
-    
+     
     public OffensivePlayer(String name, int oPositions)
     {
         this.name =  name;
@@ -49,6 +53,13 @@ public class OffensivePlayer extends Player
     public String getPosition()
     {
         return position;
+    }
+    public int getPositionIndex(String j)
+    {
+        String count = getOffensivePositions();
+        String[] lines = count.split("\r\n|\r|\n");
+        int k = Arrays.asList(lines).indexOf(j);
+        return k;
     }
     
     public double getPassingYards()
@@ -81,20 +92,20 @@ public class OffensivePlayer extends Player
         this.completions = completions;
     }
     
+    @Override
     public String getOffensivePositions() 
     {
         List<String> pos = Arrays.asList(offensivePositions);
         String oPositionsList = "";
         for (String p:offensivePositions)
-            oPositionsList += (p + "\t" + pos.indexOf(p) + "\n");
+            oPositionsList += (p + "\n");
         return oPositionsList;
     }
     
     @Override
     public String toString()
     {  
-        allStats = "Name:\t\t" + name + "\nHeight:\t\t" + heightInInches + " In.\nWeight:\t\t" + weightInPounds + " Lbs.\nPosition:\t" + position
-                + "\nPassing:\t" + passingYards + " Yrds.\nRushing:\t" + rushingYards + " Yrds.\nCompletions:\t" + completions + "\n";
+        allStats = name + "\n" + heightInInches + "\n" + weightInPounds + "\n" + position + "\n" + passingYards + "\n" + rushingYards + "\n" + completions;
         return allStats;
     }
 }

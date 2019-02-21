@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--My name is Joseph Posey and this is my work-->
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="nfl_draft_app.All_Player_ListController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nfl_draft_app.All_Player_ListController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="20.0" layoutY="20.0" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -23,12 +22,22 @@
                   <Font name="Berlin Sans FB Bold" size="18.0" />
                </font>
             </Button>
+            <Button fx:id="All_Player_List_RemovePlayerBtn" layoutX="73.0" layoutY="293.0" mnemonicParsing="false" onAction="#removePlayer" prefHeight="73.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Remove Player">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="All_Player_List_ViewStatsBtn1" layoutX="357.0" layoutY="293.0" mnemonicParsing="false" onAction="#ViewStats" prefHeight="73.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="View Stats">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="18.0" />
+               </font>
+            </Button>
+            <Text layoutX="207.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Players">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="36.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
-      <Button fx:id="All_Player_List_RemovePlayerBtn" layoutX="224.0" layoutY="310.0" mnemonicParsing="false" onAction="#removePlayer" prefHeight="73.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Remove Player">
-         <font>
-            <Font name="Berlin Sans FB Bold" size="18.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
